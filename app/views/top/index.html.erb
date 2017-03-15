@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <% if notice then %>  
+            <div class="layout-box-info">
+                <div class="layout-box__first-wrap">
+                    <p><%= notice %></p>
+                </div>
+            <!--/.layout-box--></div>
+        <% end %>
+        <div class="layout-btn vr-right">
+            <%= link_to "New Photo", new_picture_path, class: 'mod-btn-default vr-width-auto vr-small' %>
+        </div>
+        <%= render 'picture_list' %>
+    </div>
+</div>
+
+  <div id="page-top-btn" class="page-top-btn">
+      <p><a class="move-page-top" id="move-page-top">▲</a></p>
+  </div>

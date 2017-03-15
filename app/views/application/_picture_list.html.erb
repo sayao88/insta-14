@@ -1,0 +1,13 @@
+<% @pictures.each do |picture| %>
+    <div class="row">
+        <h4><strong><%= picture.title %></strong></h4>
+        <% if picture.img %>
+            <p><%= image_tag(picture.img,class:"test") %></p>
+        <% end %>
+        <p><%= picture.content %></p>
+        <p>書いた人:<%= picture.user.name %></p>
+        <p>プロフィール画像:<%= profile_img(picture.user) %></p>
+        <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default' %>
+        <%= link_to "削除", picture_path(picture), method: :delete, data: {confirm:'本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+    </div>
+<% end %>

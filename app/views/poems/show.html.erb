@@ -1,0 +1,14 @@
+
+<div class="container">
+  	<div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+		<h1>Poem詳細</h1>
+		  <div class="row">
+			  <h4><strong><%= @poem.title %></strong></h4>
+			   <p><%= @poem.content %></p>
+		  </div>
+	</div>
+</div>
+<p><%= link_to 'Poem一覧', poems_path %></p>
+  <div id="page-top-btn" class="page-top-btn visible-place-200">
+      <p><a class="move-page-top" id="move-page-top">▲</a></p>
+  </div>
