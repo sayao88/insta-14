@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <title>Achieve</title>
+  <title>Insta</title>
   <%= csrf_meta_tags %>
   <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"><!--スマホ対応ある場合-->
@@ -30,9 +30,10 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "＋", new_picture_path %></li>
             <% if user_signed_in? %>
-            
-                <li><%= link_to 'マイページ', edit_user_registration_path %></li>
               <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+              <% if application_user_admin_flag %>
+                <li><%= link_to '管理画面', rails_admin_path %></li>
+              <% end %>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to 'ログイン', new_user_session_path  %></li>

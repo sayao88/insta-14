@@ -1,18 +1,23 @@
 module ApplicationHelper
 
-  # プロフィールイメージ
-  def profile_img(user)
-    # アップロードした画像用
-    return image_tag(user.avatar, alt: user.name, class: "mod-profile-img") if user.avatar?
+    # プロフィールイメージ
+    def profile_img(user)
+        # アップロードした画像用
+        return image_tag(user.avatar, alt: user.name, class: "mod-profile-img") if user.avatar?
 
-    # SNSから引き継いだ画像用
-    unless user.provider.blank?
-      img_url = user.image_url
-    else
-      img_url = 'no_image.png'
+        # SNSから引き継いだ画像用
+        unless user.provider.blank?
+          img_url = user.image_url
+        else
+          img_url = 'no_image.png'
+        end
+        image_tag(img_url, alt: user.name, class: "mod-profile-img")
     end
-    image_tag(img_url, alt: user.name, class: "mod-profile-img")
-  end
+
+    def application_user_admin_flag()
+        current_user.admin
+    end
+
 end
 
 module ActionView

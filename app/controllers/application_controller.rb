@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
     end
 
-
   #画像アップロード用
   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
   #PERMISSIBLE_ATTRIBUTES = %i(name img img_cache)

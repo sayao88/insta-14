@@ -4,7 +4,6 @@ class PicturesController < ApplicationController
     before_action :set_picture, only: [:edit, :update ,:destroy]
 
     def index
-        # すべてのブログを取得する処理をindexアクションに定義 Blog=モデル名
         @pictures = Picture.all
         # binding.pry # ブレークポイントを作成
         # raise
