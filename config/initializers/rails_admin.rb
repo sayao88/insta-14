@@ -11,6 +11,7 @@ RailsAdmin.config do |config|
   # == Cancan ==
   config.authorize_with :cancan
 
+  config.main_app_name = %w(Insta 管理サイト)
 
   ## == Pundit ==
   # config.authorize_with :pundit
